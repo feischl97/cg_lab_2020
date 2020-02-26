@@ -11,6 +11,8 @@ Slides and lab material can be found at:
 * Marc Streit (@mstreit)
 * Klaus Eckelt (@keckelt)
 * Patrick Adelberger (@PatrickAdelberger)
+* Indrajit Kurmi
+* Teaching Assistant(s): Moritz Schöfl
 
 ## Launch
 
