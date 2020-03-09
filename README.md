@@ -2,7 +2,7 @@
 
 This repository contains the labs for the course Computer Graphics at the Johannes Kepler University Linz, Austria.
 
-Slides and lab material can be found at [Moodle](https://moodle.jku.at/).
+Slides and lab material can be found in [Moodle](https://moodle.jku.at/).
 
 
 ## Staff
@@ -10,8 +10,7 @@ Slides and lab material can be found at [Moodle](https://moodle.jku.at/).
 * David Schedl (@schedldave)
 * Marc Streit (@mstreit)
 * Klaus Eckelt (@keckelt)
-* Patrick Adelberger (@PatrickAdelberger)
-* Indrajit Kurmi
+* Patrick Adelberger (@PatrickAdelberger)i
 * Teaching Assistant(s): Moritz Schöfl
 
 ## Launch
