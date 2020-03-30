@@ -29,7 +29,7 @@ Material material = Material(vec4(0.24725, 0.1995, 0.0745, 1.),
 														vec4(0.75164, 0.60648, 0.22648, 1.),
 														vec4(0.628281, 0.555802, 0.366065, 1.),
 														vec4(0., 0., 0., 0.),
-														0.4);
+														50.0);
 
 //TASK 3-1 use uniform for light
 Light light = Light(vec4(0., 0., 0., 1.),

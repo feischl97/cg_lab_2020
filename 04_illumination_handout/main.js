@@ -53,12 +53,20 @@ function createSceneGraph(gl, resources) {
 
   {
     //TASK 3-6 create white light node at [0, 2, 2]
+    //light.ambient = [.5, .5, .5, 1];
+    //light.diffuse = [1, 1, 1, 1];
+    //light.specular = [1, 1, 1, 1];
+    //light.position = [0, 2, 2];
     //TASK 4-1 animated light using rotateLight transformation node
   }
 
 
   {
     //TASK 5-1 create red light node at [2, 0.2, 0]
+    //light2.ambient = [0, 0, 0, 1];
+    //light2.diffuse = [1, 0, 0, 1];
+    //light2.specular = [1, 0, 0, 1];
+    //light2.position = [2, 0.2, 0];
   }
 
   {
@@ -234,11 +242,10 @@ class LightNode extends TransformationSGNode {
       position = this.computeLightPosition(context);
 
     //TASK 3-5 set uniforms
-	  gl.uniform4fv(gl.getUniformLocation(shader, this.uniform+'.ambient'), this.ambient);
-    gl.uniform4fv(gl.getUniformLocation(shader, this.uniform+'.diffuse'), this.diffuse);
-    gl.uniform4fv(gl.getUniformLocation(shader, this.uniform+'.specular'), this.specular);
-
-    gl.uniform3f(gl.getUniformLocation(shader, this.uniform+'Pos'), position[0], position[1], position[2]);
+	  //gl.uniform4fv(gl.getUniformLocation(shader, this.uniform+'.ambient'), this.ambient);
+    //gl.uniform4fv(gl.getUniformLocation(shader, this.uniform+'.diffuse'), this.diffuse);
+    //gl.uniform4fv(gl.getUniformLocation(shader, this.uniform+'.specular'), this.specular);
+    // and set position (in eye/camera space) :
   }
 
   render(context) {
