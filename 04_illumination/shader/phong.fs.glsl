@@ -29,7 +29,7 @@ struct Light {
 //														vec4(0.75164, 0.60648, 0.22648, 1.),
 //														vec4(0.628281, 0.555802, 0.366065, 1.),
 //														vec4(0., 0., 0., 0.),
-//														0.4);
+//														50.0);
 uniform Material u_material;
 //TASK 3-1 use uniform for light
 //Light light = Light(vec4(0., 0., 0., 1.),
