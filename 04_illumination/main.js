@@ -14,7 +14,10 @@ const camera = {
   rotation: {
     x: 0,
     y: 0
-  }
+  },
+  translationX: 0,
+  translationY: 0,
+  translationZ: 0
 };
 
 //load the shader resources using a utility function
@@ -158,11 +161,38 @@ function initInteraction(canvas) {
     //https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
     if (event.code === 'KeyR') {
       camera.rotation.x = 0;
-  		camera.rotation.y = 0;
+      camera.rotation.y = 0;
+      camera.translationX = 0;
+      camera.translationY = 0;
+      camera.translationZ = 0;
     }
+
+    if (event.code === 'KeyW') {
+      camera.translationX += 1;
+    }
+
+    if (event.code === 'KeyS') {
+      camera.translationX -= 1;
+    }
+
+    if (event.code === 'KeyA') {
+      camera.translationY += 1;
+    }
+
+    if (event.code === 'KeyD') {
+      camera.translationY -= 1;
+    }
+
+    if (event.code === 'KeyQ') {
+      camera.translationZ += 1;
+    }
+
+    if (event.code === 'KeyE') {
+      camera.translationZ -= 1;
+    }
+
   });
 }
-
 
 function render(timeInMilliseconds) {
   checkForWindowResize(gl);
@@ -178,15 +208,17 @@ function render(timeInMilliseconds) {
   context.projectionMatrix = mat4.perspective(mat4.create(), glm.deg2rad(30), gl.drawingBufferWidth / gl.drawingBufferHeight, 0.01, 100);
 
   //ReCap: what does this mean?
-  context.viewMatrix = mat4.lookAt(mat4.create(), [0,1,-10], [0,0,0], [0,1,0]);
+  context.viewMatrix = mat4.lookAt(mat4.create(), [0, 0, -10], [0,0,0], [0,1,0]);
 
   //TASK 0-2 rotate whole scene according to the mouse rotation stored in
   //camera.rotation.x and camera.rotation.y
+ 
   context.sceneMatrix = mat4.multiply(mat4.create(),
                             glm.rotateY(camera.rotation.x),
                             glm.rotateX(camera.rotation.y));
-
-  rotateNode.matrix = glm.rotateY(timeInMilliseconds*-0.01);
+                            
+  context.sceneMatrix = mat4.translate(context.sceneMatrix, context.sceneMatrix, vec3.fromValues(camera.translationY, camera.translationZ, camera.translationX));                          
+  //rotateNode.matrix = glm.rotateY(timeInMilliseconds*-0.01);
 
   //TASK 4-2 enable light rotation
   rotateLight.matrix = glm.rotateY(timeInMilliseconds*0.05);
