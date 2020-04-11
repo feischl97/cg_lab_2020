@@ -18,9 +18,10 @@ uniform mat4 u_projection;
 void main() {
 
   //TASK 1 and TASK 2-1
+  vec3 translation = vec3(0, 0,0);
 
   gl_Position = u_projection * u_modelView
-    * vec4(a_position, 1);
+    * vec4(a_position + translation, 1);
 
   //just copy the input color to the output varying color
   v_color = a_color;
